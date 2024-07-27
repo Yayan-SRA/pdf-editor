@@ -1,0 +1,21 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fluid {
+  height: 100vh; /* Full viewport height */
+}
+
+.canvas-wrapper {
+  border: 2px solid black; /* Border around the canvas */
+  background-color: white; /* Canvas background color */
+  width: 794px; /* A4 width in pixels */
+  height: 1123px; /* A4 height in pixels */
+  box-sizing: border-box; /* Include border and padding in the size */
+  background-color: white;
+}
