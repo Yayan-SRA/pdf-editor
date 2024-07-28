@@ -16,8 +16,8 @@ function App() {
       </nav>
       <div className="d-flex flex-grow-1">
         <div className="sidebar bg-light p-3 border-right">
-          <AddTextButton canvasRef={canvasRef} />
           <SaveButton canvasRef={canvasRef} />
+          <AddTextButton canvasRef={canvasRef} />
           <TextToolbar canvasRef={canvasRef} />
         </div>
         <div className="flex-grow-1 d-flex justify-content-center align-items-center">

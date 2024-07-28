@@ -1,3 +1,5 @@
+// Canvas.jsx
+
 import React, { useEffect, useImperativeHandle, useRef } from 'react';
 import * as fabric from 'fabric';
 
@@ -13,6 +15,14 @@ const Canvas = React.forwardRef((props, ref) => {
       canvasInstance.current = new fabric.Canvas(canvasRef.current, {
         width: A4_WIDTH,
         height: A4_HEIGHT,
+      });
+
+      // Event listener for object selection
+      canvasInstance.current.on('selection:created', (e) => {
+        console.log('Object selected:', e.target);
+      });
+      canvasInstance.current.on('selection:updated', (e) => {
+        console.log('Object updated:', e.target);
       });
     }
     return () => {

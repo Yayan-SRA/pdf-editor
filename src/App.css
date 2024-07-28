@@ -19,3 +19,21 @@ body, html {
   box-sizing: border-box; /* Include border and padding in the size */
   background-color: white;
 }
+
+/* App.css or TextToolbar.css */
+
+.text-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between controls */
+}
+
+.text-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-control {
+  width: 100px; /* Adjust width as needed */
+}

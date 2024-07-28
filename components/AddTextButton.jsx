@@ -9,7 +9,7 @@ const AddTextButton = ({ canvasRef }) => {
         left: 100,
         top: 100,
         fill: '#000',
-        fontSize: 20,
+        fontSize: 16,
         editable: true
       });
       canvas.add(text);
