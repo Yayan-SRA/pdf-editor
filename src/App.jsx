@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Canvas from '../components/Canvas';
 import AddTextButton from '../components/AddTextButton';
 import SaveButton from '../components/SaveButton';
@@ -8,6 +8,11 @@ import './App2.css';
 
 function App() {
   const canvasRef = useRef(null);
+  const [showTextSidebar, setShowTextSidebar] = useState(false);
+
+  const toggleTextSidebar = () => {
+    setShowTextSidebar(!showTextSidebar);
+  };
 
   return (
     <div className="d-flex flex-column h-100">
@@ -17,8 +22,13 @@ function App() {
       <div className="d-flex flex-grow-1">
         <div className="sidebar bg-light p-3 border-right">
           <SaveButton canvasRef={canvasRef} />
-          <AddTextButton canvasRef={canvasRef} />
-          <TextToolbar canvasRef={canvasRef} />
+          <button onClick={toggleTextSidebar}>Text</button>
+          {showTextSidebar && (
+            <div className="text-sidebar">
+              <AddTextButton canvasRef={canvasRef} />
+              <TextToolbar canvasRef={canvasRef} />
+            </div>
+          )}
         </div>
         <div className="flex-grow-1 d-flex justify-content-center align-items-center">
           <div className="canvas-wrapper d-flex justify-content-center align-items-center">
