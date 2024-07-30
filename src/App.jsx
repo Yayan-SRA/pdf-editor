@@ -1,45 +1,27 @@
-import React, { useRef, useState } from 'react';
-import Canvas from '../components/Canvas';
-import AddTextButton from '../components/AddTextButton';
-import SaveButton from '../components/SaveButton';
-import TextToolbar from '../components/TextToolbar';
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import CreateReportPage from './pages/CreateReportPage'; // Assuming this is where you handle report creation
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App2.css';
 
 function App() {
-  const canvasRef = useRef(null);
-  const [showTextSidebar, setShowTextSidebar] = useState(false);
-
-  const toggleTextSidebar = () => {
-    setShowTextSidebar(!showTextSidebar);
-  };
-
   return (
-    <div className="d-flex flex-column h-100">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">PDF Editor</a>
-      </nav>
-      <div className="d-flex flex-grow-1">
-        <div className="sidebar bg-light p-3 border-right">
-          <SaveButton canvasRef={canvasRef} />
-          <button onClick={toggleTextSidebar}>Text</button>
-          {showTextSidebar && (
-            <div className="text-sidebar">
-              <AddTextButton canvasRef={canvasRef} />
-              <TextToolbar canvasRef={canvasRef} />
-            </div>
-          )}
-        </div>
-        <div className="flex-grow-1 d-flex justify-content-center align-items-center">
-          <div className="canvas-wrapper d-flex justify-content-center align-items-center">
-            <Canvas ref={canvasRef} />
-          </div>
-        </div>
+    <Router>
+      <div className="d-flex flex-column min-vh-100">
+        <Navbar />
+        <main className="flex-fill">
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/create-report/:reportId" element={<CreateReportPage />} />
+            {/* Add other routes here */}
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <footer className="bg-light text-center py-3 border-top">
-        &copy; 2024 Your Company
-      </footer>
-    </div>
+    </Router>
   );
 }
 

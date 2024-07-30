@@ -12,11 +12,14 @@
   "dependencies": {
     "@eslint/config-array": "^0.17.1",
     "@eslint/object-schema": "^2.1.4",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "fabric": "^6.0.2",
     "glob": "^11.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
     "rimraf": "^6.0.1"
   },
   "devDependencies": {
