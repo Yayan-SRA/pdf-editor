@@ -1,0 +1,56 @@
+.text-toolbar {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.text-toolbar .row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.text-toolbar .col {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.text-toolbar .col:last-child {
+    margin-right: 0;
+}
+
+.text-toolbar label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.text-toolbar .form-control {
+    width: 100%;
+}
+
+.text-toolbar .btn {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    /* padding: 5px; */
+    /* padding: auto; */
+    margin: 0;
+    cursor: pointer;
+}
+
+.text-toolbar .btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.text-toolbar .btn strong {
+    font-weight: bold;
+}
+
+.text-toolbar .btn em {
+    font-style: italic;
+}
+
+.text-toolbar .btn p {
+    margin: 0;
+}

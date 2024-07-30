@@ -23,7 +23,7 @@ const SaveButton = ({ canvasRef }) => {
     }
   };
 
-  return <button onClick={saveCanvas}>Save Canvas</button>;
+  return <button className='btn btn-success' onClick={saveCanvas}>Save Canvas</button>;
 };
 
 export default SaveButton;

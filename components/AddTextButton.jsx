@@ -3,22 +3,22 @@ import * as fabric from 'fabric';
 
 const AddTextButton = ({ canvasRef }) => {
   const addText = () => {
-    const canvas = canvasRef.current?.getCanvas(); // Get the Fabric.js canvas instance
+    const canvas = canvasRef.current?.getCanvas();
     if (canvas) {
-      const text = new fabric.IText('New Text', { // Use fabric.IText to allow inline editing
-        left: 100,
-        top: 100,
-        fill: '#000',
-        fontSize: 20,
-        editable: true
+      const text = new fabric.IText('New Text', {
+        left: 50,
+        top: 50,
+        fill: '#000000',
+        fontSize: 16,
+        editable: true,
       });
       canvas.add(text);
-      canvas.setActiveObject(text); // Set the newly added text as the active object
-      canvas.renderAll(); // Ensure the canvas is re-rendered
+      canvas.setActiveObject(text);
+      canvas.renderAll();
     }
   };
 
-  return <button onClick={addText}>Add Text</button>;
+  return <button className='btn btn-secondary mt-3' onClick={addText}><i className="fa-solid fa-plus"></i> Text</button>;
 };
 
 export default AddTextButton;
