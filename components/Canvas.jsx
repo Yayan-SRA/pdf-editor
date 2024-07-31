@@ -1,8 +1,6 @@
 import React, { useEffect, useImperativeHandle, useRef } from 'react';
 import * as fabric from 'fabric';
 
-// const PT_TO_PX = 1.3333333333;
-
 const Canvas = React.forwardRef((props, ref) => {
   const canvasRef = useRef(null);
   const canvasInstance = useRef(null);

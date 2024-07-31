@@ -158,7 +158,7 @@ function TextToolbar({ canvasRef }) {
                 value={fontSize}
                 onChange={handleFontSizeChange}
                 className="form-control"
-                min="1"
+                min="1" disabled={isLocked}
                 />
             </label>
             </div>
@@ -169,7 +169,7 @@ function TextToolbar({ canvasRef }) {
                 type="color"
                 value={fontColor}
                 onChange={handleFontColorChange}
-                className="form-control"
+                className="form-control" disabled={isLocked}
                 />
             </label>
             </div>
@@ -182,7 +182,7 @@ function TextToolbar({ canvasRef }) {
                 type="number"
                 value={left}
                 onChange={handleLeftChange}
-                className="form-control"
+                className="form-control" disabled={isLocked}
                 />
             </label>
             </div>
@@ -194,51 +194,51 @@ function TextToolbar({ canvasRef }) {
                 value={top}
                 onChange={handleTopChange}
                 className="form-control"
-                min="0"
+                min="0" disabled={isLocked}
                 />
             </label>
             </div>
         </div>
         <div className="row">
             <div className="col">
-            <button onClick={toggleBold} className={`btn ${isBold ? 'active' : ''}`}>
+            <button onClick={toggleBold} className={`btn ${isBold ? 'active' : ''}`} disabled={isLocked}>
                 <strong>B</strong>
             </button>
             </div>
             <div className="col">
-            <button onClick={toggleItalic} className={`btn ${isItalic ? 'active' : ''}`}>
+            <button onClick={toggleItalic} className={`btn ${isItalic ? 'active' : ''}`} disabled={isLocked}>
                 <em>I</em>
             </button>
             </div>
             <div className="col">
-            <button onClick={toggleUnderline} className={`btn ${isUnderline ? 'active' : ''}`}>
+            <button onClick={toggleUnderline} className={`btn ${isUnderline ? 'active' : ''}`} disabled={isLocked}>
                 <p style={{ textDecoration: 'underline', marginBottom: 0 }}>U</p>
             </button>
             </div>
             <div className="col">
-            <button onClick={toggleStrikethrough} className={`btn ${isStrikethrough ? 'active' : ''}`}>
+            <button onClick={toggleStrikethrough} className={`btn ${isStrikethrough ? 'active' : ''}`} disabled={isLocked}>
                 <p style={{ textDecoration: 'line-through', marginBottom: 0 }}>ab</p>
             </button>
             </div>
         </div>
         <div className="row">
             <div className="col">
-            <button onClick={() => setAlignment('left')} className={`btn ${textAlign === 'left' ? 'active' : ''}`}>
+            <button onClick={() => setAlignment('left')} className={`btn ${textAlign === 'left' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-left"></i>
             </button>
             </div>
             <div className="col">
-            <button onClick={() => setAlignment('center')} className={`btn ${textAlign === 'center' ? 'active' : ''}`}>
+            <button onClick={() => setAlignment('center')} className={`btn ${textAlign === 'center' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-center"></i>
             </button>
             </div>
             <div className="col">
-            <button onClick={() => setAlignment('right')} className={`btn ${textAlign === 'right' ? 'active' : ''}`}>
+            <button onClick={() => setAlignment('right')} className={`btn ${textAlign === 'right' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-right"></i>
             </button>
             </div>
             <div className="col">
-            <button onClick={() => setAlignment('justify')} className={`btn ${textAlign === 'justify' ? 'active' : ''}`}>
+            <button onClick={() => setAlignment('justify')} className={`btn ${textAlign === 'justify' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-justify"></i>
             </button>
             </div>
