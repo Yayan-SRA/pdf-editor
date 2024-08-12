@@ -252,7 +252,7 @@ function TextToolbar({ canvasRef }) {
             </div>
         </div>
         <button onClick={deleteActiveObject} className="btn">
-            Delete
+            <i className="fa-solid fa-eraser"></i>
         </button>
         </div>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as fabric from 'fabric';
+import { fabric } from 'fabric';
 
 const AddTextButton = ({ canvasRef }) => {
   const addText = () => {

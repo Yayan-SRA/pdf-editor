@@ -15,7 +15,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
-    "fabric": "^6.0.2",
+    "fabric": "^5.2.4",
     "glob": "^11.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

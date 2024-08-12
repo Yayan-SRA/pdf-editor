@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import ReportModal from '../../components/ReportModal';
+import ReportModal from '../components/ReportModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MainPage() {

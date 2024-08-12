@@ -1,4 +1,4 @@
-import * as fabric from 'fabric';
+import { fabric } from 'fabric';
 
 class Table extends fabric.Object {
   constructor(options) {
