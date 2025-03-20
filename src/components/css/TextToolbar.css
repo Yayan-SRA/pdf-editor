@@ -29,7 +29,9 @@
     width: 100%;
 }
 
-.text-toolbar .btn {
+.text-toolbar .btns {
+    min-width: 50px;
+    max-width: 60px;
     border: 1px solid #ccc;
     background-color: #fff;
     /* padding: 5px; */
@@ -38,19 +40,19 @@
     cursor: pointer;
 }
 
-.text-toolbar .btn.active {
+.text-toolbar .btns.active {
     background-color: #007bff;
     color: #fff;
 }
 
-.text-toolbar .btn strong {
+.text-toolbar .btns strong {
     font-weight: bold;
 }
 
-.text-toolbar .btn em {
+.text-toolbar .btns em {
     font-style: italic;
 }
 
-.text-toolbar .btn p {
+.text-toolbar .btns p {
     margin: 0;
 }

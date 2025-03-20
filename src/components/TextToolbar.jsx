@@ -14,6 +14,23 @@ function TextToolbar({ canvasRef }) {
     const [textAlign, setTextAlign] = useState('left');
     const [isLocked, setIsLocked] = useState(false);
 
+    const addText = () => {
+        const canvas = canvasRef.current?.getCanvas();
+        if (canvas) {
+            const text = new fabric.IText('New Text', {
+                left: 50,
+                top: 50,
+                fill: '#000000',
+                fontSize: 16,
+                editable: true,
+                tipe:'PARAGRAPH',
+            });
+            canvas.add(text);
+            canvas.setActiveObject(text);
+            canvas.renderAll();
+        }
+    }
+
     const updateTextProperties = () => {
         const canvas = canvasRef.current ? canvasRef.current.getCanvas() : null;
         if (!canvas) return;
@@ -30,7 +47,8 @@ function TextToolbar({ canvasRef }) {
         setIsStrikethrough(!!activeObject.linethrough);
         setTextAlign(activeObject.textAlign || 'left');
         setIsLocked(activeObject.lockMovementX);
-        } else {
+        } 
+        else {
         resetTextProperties();
         }
     };
@@ -149,6 +167,7 @@ function TextToolbar({ canvasRef }) {
 
     return (
         <div className="text-toolbar mt-3">
+        <button className='btn btn-secondary mb-2' onClick={addText}><i className="fa-solid fa-plus"></i> Text</button>
         <div className="row">
             <div className="col">
             <label>
@@ -201,59 +220,59 @@ function TextToolbar({ canvasRef }) {
         </div>
         <div className="row">
             <div className="col">
-            <button onClick={toggleBold} className={`btn ${isBold ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={toggleBold} className={`btn btns ${isBold ? 'active' : ''}`} disabled={isLocked}>
                 <strong>B</strong>
             </button>
             </div>
             <div className="col">
-            <button onClick={toggleItalic} className={`btn ${isItalic ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={toggleItalic} className={`btn btns ${isItalic ? 'active' : ''}`} disabled={isLocked}>
                 <em>I</em>
             </button>
             </div>
             <div className="col">
-            <button onClick={toggleUnderline} className={`btn ${isUnderline ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={toggleUnderline} className={`btn btns ${isUnderline ? 'active' : ''}`} disabled={isLocked}>
                 <p style={{ textDecoration: 'underline', marginBottom: 0 }}>U</p>
             </button>
             </div>
             <div className="col">
-            <button onClick={toggleStrikethrough} className={`btn ${isStrikethrough ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={toggleStrikethrough} className={`btn btns ${isStrikethrough ? 'active' : ''}`} disabled={isLocked}>
                 <p style={{ textDecoration: 'line-through', marginBottom: 0 }}>ab</p>
             </button>
             </div>
         </div>
         <div className="row">
             <div className="col">
-            <button onClick={() => setAlignment('left')} className={`btn ${textAlign === 'left' ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={() => setAlignment('left')} className={`btn btns ${textAlign === 'left' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-left"></i>
             </button>
             </div>
             <div className="col">
-            <button onClick={() => setAlignment('center')} className={`btn ${textAlign === 'center' ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={() => setAlignment('center')} className={`btn btns ${textAlign === 'center' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-center"></i>
             </button>
             </div>
             <div className="col">
-            <button onClick={() => setAlignment('right')} className={`btn ${textAlign === 'right' ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={() => setAlignment('right')} className={`btn btns ${textAlign === 'right' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-right"></i>
             </button>
             </div>
             <div className="col">
-            <button onClick={() => setAlignment('justify')} className={`btn ${textAlign === 'justify' ? 'active' : ''}`} disabled={isLocked}>
+            <button onClick={() => setAlignment('justify')} className={`btn btns ${textAlign === 'justify' ? 'active' : ''}`} disabled={isLocked}>
                 <i className="fa-solid fa-align-justify"></i>
             </button>
             </div>
         </div>
         <div className="row">
             <div className="col">
-                <button onClick={toggleLock} className={`btn ${isLocked ? 'active' : ''}`}>
+                <button onClick={toggleLock} className={`btn btns ${isLocked ? 'active' : ''}`}>
                     {isLocked ? <i className="fa-solid fa-unlock"></i> : <i className="fa-solid fa-lock"></i>}
-                    {isLocked ? ' Unlock' : ' Lock'}
+                    {/* {isLocked ? ' Unlock' : ' Lock'} */}
                 </button>
             </div>
         </div>
-        <button onClick={deleteActiveObject} className="btn">
+        {/* <button onClick={deleteActiveObject} className="btn btns">
             <i className="fa-solid fa-eraser"></i>
-        </button>
+        </button> */}
         </div>
     );
 }

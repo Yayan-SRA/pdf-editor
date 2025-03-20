@@ -33,6 +33,10 @@
   padding: 10px;
 }
 
+.contain {
+  width: 98%;
+  margin: auto;
+}
 /* Canvas Wrapper Styles */
 .canvas-wrapper {
   border: 2px solid rgb(0, 0, 0); /* Border around the canvas */
